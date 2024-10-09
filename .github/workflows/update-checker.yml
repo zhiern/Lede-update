@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: Update Checker
+name: 定时更新
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
