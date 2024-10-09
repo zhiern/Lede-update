@@ -21,7 +21,6 @@ sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 
 # 临时
 sed -i 's/6.1/6.6/g'  ./target/linux/x86/Makefile
-sed -i 's/6.1/6.6/g'  ./target/linux/rockchip/Makefile
 
 # 移除要替换的包
 rm -rf feeds/packages/net/mosdns
