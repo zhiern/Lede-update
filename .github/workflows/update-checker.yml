@@ -49,7 +49,7 @@ jobs:
       if: steps.cacheHash.outputs.cache-hit != 'true'
       uses: peter-evans/repository-dispatch@v2
       with:
-        token: ${{ github.token }}
+        token: ${{ secrets.TOKEN_OPPEN321 }}
         event-type: 定时编译
 
     - name: 删除工作流程运行
