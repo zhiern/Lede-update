@@ -1,4 +1,4 @@
-name: X86_64_OpenWrt
+name: 编译固件
 
 on:
   workflow_dispatch:
