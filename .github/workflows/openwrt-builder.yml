@@ -58,7 +58,7 @@ jobs:
       run: |
         docker rmi $(docker images -q)
         sudo -E apt-get -qq update
-        sudo -E apt-get -y install rename $(curl -fsSL is.gd/cXklVO)
+        sudo -E apt-get -y install rename $(curl -fsSL is.gd/dCcRl8)
         sudo -E apt-get -qq purge azure-cli ghc* zulu* firefox powershell openjdk* dotnet* google* mysql* php* android*
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo -E apt-get -qq autoremove --purge
