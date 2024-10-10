@@ -52,7 +52,7 @@ jobs:
     - name: 查看分区情况
       uses: actions/checkout@main
 
-    - name: Initialization environment
+    - name: 初始化环境
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
