@@ -107,9 +107,13 @@ sed -i "s/${orig_version}/R${date_version} by OPPEN321/g" package/lean/default-s
 
 # 修复 armv8 设备 xfsprogs 报错
 sed -i 's/TARGET_CFLAGS.*/TARGET_CFLAGS += -DHAVE_MAP_SYNC -D_LARGEFILE64_SOURCE/g' feeds/packages/utils/xfsprogs/Makefile
+
 # 临时
 sed -i 's/6.1/6.6/g'  ./target/linux/x86/Makefile
 sed -i 's/6.1/6.6/g'  ./target/linux/rockchip/Makefile
+
+##更改主机名
+sed -i "s/hostname='.*'/hostname='ZeroWrt'/g" package/base-files/files/bin/config_generate
 
 # 修改 Makefile
 find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/..\/..\/luci.mk/$(TOPDIR)\/feeds\/luci\/luci.mk/g' {}
