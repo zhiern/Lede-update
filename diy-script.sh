@@ -1,10 +1,24 @@
 #!/bin/bash
 
+# 设置 Rust 工具链镜像
+export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+
+# 安装稳定版 Rust
+rustup install stable
+
+# 确保 .cargo 目录存在
+mkdir -p ~/.cargo
+
+# 配置 Cargo 镜像
+cat <<EOL > ~/.cargo/config.toml
 [source.crates-io]
 replace-with = 'mirror'
 
 [source.mirror]
 registry = "sparse+https://mirrors.bfsu.edu.cn/crates.io-index/"
+EOL
+
+echo "Rust and Cargo mirrors have been configured successfully."
 
 # 修改默认IP
 sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
