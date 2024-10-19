@@ -1,5 +1,19 @@
 #!/bin/bash
 
+# 创建 .cargo 目录
+mkdir -p ~/.cargo
+
+# 创建 config.toml 文件并写入配置内容
+cat > ~/.cargo/config.toml <<EOL
+[source.crates-io]
+replace-with = 'mirror'
+
+[source.mirror]
+registry = "sparse+https://mirrors.bfsu.edu.cn/crates.io-index/"
+
+[llvm]
+download-ci-llvm = false
+EOL
 
 # 修改默认IP
 sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
